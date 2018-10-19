@@ -21,9 +21,9 @@ pipeline {
         stage('preamble') {
             steps {
                 script {
-                    sh script.sh
                     openshift.withCluster() {
                         openshift.withProject() {
+			    sh "ls -lah"
                             echo "Using project: ${openshift.project()}"
                         }
                     }
