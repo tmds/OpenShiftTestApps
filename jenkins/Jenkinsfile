@@ -23,7 +23,7 @@ pipeline {
                 script {
                     openshift.withCluster() {
                         openshift.withProject() {
-			    sh "ls -lah"
+			                sh "dotnet publish -c Release web-2.1.300"
                             echo "Using project: ${openshift.project()}"
                         }
                     }
